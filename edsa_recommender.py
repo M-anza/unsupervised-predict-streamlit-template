@@ -74,8 +74,9 @@ def main():
 
         # Perform top-10 movie recommendation generation
         if sys == 'Content Based Filtering':
-            print("test-------------test-------------test-------------test-------------")
+            
             if st.button("Recommend"):
+                print("test-------------test-------------test-------------test-------------")
                 try:
                     
                     with st.spinner('Crunching the numbers...'):
