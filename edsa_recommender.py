@@ -76,10 +76,11 @@ def main():
         if sys == 'Content Based Filtering':
             if st.button("Recommend"):
                 try:
+		    print("test1-------------test1-------------test1-------------test1-------------")
                     with st.spinner('Crunching the numbers...'):
                         top_recommendations = content_model(movie_list=fav_movies,
                                                             top_n=10)
-		     print("test-------------test-------------test-------------test-------------")
+		    print("test-------------test-------------test-------------test-------------")
                     st.title("We think you'll like:")
                     for i,j in enumerate(top_recommendations):
                         st.subheader(str(i+1)+'. '+j)
