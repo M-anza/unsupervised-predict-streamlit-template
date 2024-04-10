@@ -88,8 +88,9 @@ def content_model(movie_list,top_n=10):
     data = data_preprocessing(27000)
     count = CountVectorizer(stop_words='english')
     count_matrix = count.fit_transform(data['keyWords'])
-    cosine_sim = linear_kernel(count_matrix, count_matrix)
-    st.text("test3 test3 test3 test3 test3 test3 done countmetrix")
+    try:
+        cosine_sim = linear_kernel(count_matrix, count_matrix)
+    except Exception as e: st.text(e)
     indices = pd.Series(data.index, index=data['title']).drop_duplicates()
     st.text("test3 test3 test3 test3 test3 test3 done preprocess, stopeords countmatrix cosinesim indices")
     # Initializing the empty list of recommended movies
