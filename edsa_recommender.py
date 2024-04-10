@@ -74,9 +74,10 @@ def main():
 
         # Perform top-10 movie recommendation generation
         if sys == 'Content Based Filtering':
+            print("test-------------test-------------test-------------test-------------")
             if st.button("Recommend"):
                 try:
-                    print("test-------------test-------------test-------------test-------------")
+                    
                     with st.spinner('Crunching the numbers...'):
                         top_recommendations = content_model(movie_list=fav_movies,
                                                             top_n=10)
