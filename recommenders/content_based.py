@@ -87,8 +87,8 @@ def content_model(movie_list,top_n=10):
     """
     data = data_preprocessing(27000)
     count = CountVectorizer(stop_words='english')
-    st.text("test3 test3 test3 test3 test3 test3 done countvectorizer")
     count_matrix = count.fit_transform(data['keyWords'])
+    st.text("test3 test3 test3 test3 test3 test3 done countmetrix")
     cosine_sim = linear_kernel(count_matrix, count_matrix)
     indices = pd.Series(data.index, index=data['title']).drop_duplicates()
     st.text("test3 test3 test3 test3 test3 test3 done preprocess, stopeords countmatrix cosinesim indices")
