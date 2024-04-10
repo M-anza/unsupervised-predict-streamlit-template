@@ -40,7 +40,7 @@ import streamlit as st
 movies = pd.read_csv('resources/data/movies.csv', delimiter=',')
 ratings = pd.read_csv('resources/data/ratings.csv')
 movies.dropna(inplace=True)
-st.text("test3 test3 test3 test3 test3 test3 done import")
+
 
 def data_preprocessing(subset_size):
     """Prepare data for use within Content filtering algorithm.
@@ -58,13 +58,13 @@ def data_preprocessing(subset_size):
     """
     # Split genre data into individual words.
     movies['keyWords'] = movies['genres'].str.replace('|', ' ')
-    st.text("test3 test3 test3 test3 test3 test3 done replace")
+    
     # Subset of the data
     movies_subset = movies[:subset_size]
-    st.text("test3 test3 test3 test3 test3 test3 done subset")
+ 
     st.text(movies_subset.head())
     return movies_subset
-st.text("test3 test3 test3 test3 test3 test3 done returnsubset")
+
 
 # !! DO NOT CHANGE THIS FUNCTION SIGNATURE !!
 # You are, however, encouraged to change its content.  
@@ -86,6 +86,7 @@ def content_model(movie_list,top_n=10):
 
     """
     data = data_preprocessing(27000)
+    st.text("test3 test3 test3 test3 test3 test3 done returnsubset")
     count = CountVectorizer(stop_words='english')
     count_matrix = count.fit_transform(data['keyWords'])
     cosine_sim = linear_kernel(count_matrix, count_matrix)
