@@ -62,6 +62,7 @@ def data_preprocessing(subset_size):
     # Subset of the data
     movies_subset = movies[:subset_size]
     st.text("test3 test3 test3 test3 test3 test3 done subset")
+    st.text(movies_subset.head())
     return movies_subset
 st.text("test3 test3 test3 test3 test3 test3 done returnsubset")
 
