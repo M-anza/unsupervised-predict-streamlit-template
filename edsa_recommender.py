@@ -82,13 +82,13 @@ def main():
                     with st.spinner('Crunching the numbers...'):
                         top_recommendations = content_model(movie_list=fav_movies,
                                                             top_n=10)
-                    print("test2-------------test2-------------test2-------------test2-------------")
                     st.title("We think you'll like:")
                     for i,j in enumerate(top_recommendations):
                         st.subheader(str(i+1)+'. '+j)
-                    print("test1-------------test1-------------test1-------------test1-------------")
+                    
                 except:
-                    st.error("Oops! Looks like this algorithm does't work.\
+                    print("test-------------test-------------test-------------test-------------")
+                    st.error("test Oops! Looks like this algorithm does't work.\
                               We'll need to fix it!")
 
 
