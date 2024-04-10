@@ -62,7 +62,7 @@ def data_preprocessing(subset_size):
     # Subset of the data
     movies_subset = movies[:subset_size]
  
-    st.text(movies_subset.head())
+    
     return movies_subset
 
 
@@ -86,8 +86,8 @@ def content_model(movie_list,top_n=10):
 
     """
     data = data_preprocessing(27000)
-    st.text("test3 test3 test3 test3 test3 test3 done returnsubset")
     count = CountVectorizer(stop_words='english')
+    st.text("test3 test3 test3 test3 test3 test3 done countvectorizer")
     count_matrix = count.fit_transform(data['keyWords'])
     cosine_sim = linear_kernel(count_matrix, count_matrix)
     indices = pd.Series(data.index, index=data['title']).drop_duplicates()
